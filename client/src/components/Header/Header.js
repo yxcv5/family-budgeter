@@ -9,7 +9,7 @@ const Header = props =>
 	       New York Times Article Scrubber
        </strong>
     </h1>
-    <h2>{props.subtitle}</h2>
+    <h2 className="text-center">{props.subtitle}</h2>
   </div>;
 
 export default Header;

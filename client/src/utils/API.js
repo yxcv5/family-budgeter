@@ -8,10 +8,10 @@ export default {
   queryNYT: function(term, start, end) {
     let queryURL = BASEURL + term + APIKEY;
     if(start) {
-      let queryURl = queryURl + "&begin_date=" + start + "0101";
+      queryURL += "&begin_date=" + start + "0101";
     }
     if(end) {
-      let queryURl = queryURl + "&end_date=" + end + "0101";
+      queryURL += "&end_date=" + end + "0101";
     }
     return axios.get(queryURL);
   },

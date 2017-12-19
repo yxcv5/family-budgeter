@@ -26,8 +26,9 @@ class Home extends Component {
             let artObj = {};
             artObj["id"] = i+1;
             artObj["headline"] = res.data.response.docs[i].headline.main;
-            artObj["author"] = res.data.response.docs[i].byline.original;
-            artObj["pubdate"] = res.data.response.docs[i].pub_date;
+            artObj["author"] = res.data.response.docs[i].byline.original ?
+              res.data.response.docs[i].byline.original.substring(3) : "";
+            artObj["pubdate"] = res.data.response.docs[i].pub_date.substring(0,10);
             artObj["url"] = res.data.response.docs[i].web_url;
             artArr.push(artObj);
           }   
@@ -77,7 +78,7 @@ class Home extends Component {
           <br />
           <Panelheading faclasses="fa fa-list-alt" paneltitle="Search" >
             <Panelbody>
-              <form role="form">
+              <form>
                 <Formgroup labelfor="search" labeltext="Topic (Required)">
                   <Input value={this.state.topic}
                      onChange={this.handleInputChange}
@@ -116,12 +117,14 @@ class Home extends Component {
           <Panelheading faclasses="fa fa-table" paneltitle="Top Articles" >
             <Panelbody>
               {this.state.articles.length ? (
-                {this.state.articles.map(article => 
+                <div>
+                  {this.state.articles.map(article => (
                     <Srchedwell key={article.id} art={article}>
                       <Savebtn onClick={() => this.handleSaveArticle(article.id)}> Save </Savebtn>
                     </Srchedwell>
-                  )}
-              ) : (
+                  ))}
+                </div>
+                ) : (
                 <div className="well">
                   <h3>No Results to Display</h3>
                 </div>

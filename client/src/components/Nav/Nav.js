@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Container } from "../Grid";
 
 const Nav = () =>
-  <nav className="navbar navbar-inverse navbar-top">
+  <nav className="navbar navbar-default">
     <Container fluid>
       <div className="navbar-header">
         <button type="button" className="collapsed navbar-toggle">

@@ -8,6 +8,7 @@ export const Srchedwell = props =>
         <strong>{props.art.headline}</strong>
 	    </a>     
 	  </h3>
-	  <h5>By {props.art.author}  {props.art.pubdate}</h5>
-	  {props.children}
+    {props.children}
+	  <h5>{props.art.author ? `By ${props.art.author}` : ``}</h5>
+    <h6>{props.art.pubdate}</h6>
   </div>;

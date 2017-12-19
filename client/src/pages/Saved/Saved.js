@@ -38,11 +38,13 @@ class Saved extends Component {
           <Panelheading faclasses="fa fa-table" paneltitle="Saved Articles" >
             <Panelbody>
               {this.state.articles.length ? (
-                {this.state.articles.map(article => 
-                    <Savedwell key={article._id} art={article}>
-                      <Deletebtn onClick={() => this.handleDeleteArticle(article._id)}> Remove </Deletebtn>
-                    </Savedwell>
-                  )}
+                <div>
+                  {this.state.articles.map(article => (
+                      <Savedwell key={article._id} art={article}>
+                        <Deletebtn onClick={() => this.handleDeleteArticle(article._id)}> Remove </Deletebtn>
+                      </Savedwell>
+                  ))}
+                </div>
               ) : (
                 <div className="well">
                   <h3>No Saved Articles</h3>
