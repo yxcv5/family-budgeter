@@ -29,7 +29,7 @@ const Nav = () =>
         <li
           className={window.location.pathname === "/app/member" ? "active" : ""}
         >
-          <Link to="/app/member">About</Link>
+          <Link to="/app/member">About the Account</Link>
         </li>
       </ul>
     </div>

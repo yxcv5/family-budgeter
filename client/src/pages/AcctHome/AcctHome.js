@@ -88,7 +88,7 @@ class AcctHome extends React.Component {
     const options = {
       title: {
         display: true,
-        text: `$${this.state.incomeSum - this.state.spendingSum} of $${this.state.incomeSum} remaining`,
+        text: `Current month you have $${this.state.incomeSum - this.state.spendingSum} of $${this.state.incomeSum} remaining`,
         fontSize:25
       },
       scales: {
