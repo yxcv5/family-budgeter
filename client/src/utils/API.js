@@ -1,30 +1,75 @@
 import axios from "axios";
 
-const BASEURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=";
-const APIKEY = "&api-key=b9f91d369ff59547cd47b931d8cbc56b:0:74623931";
-
 export default {
-  // Query NYT articles
-  queryNYT: function(term, start, end) {
-    let queryURL = BASEURL + term + APIKEY;
-    if(start) {
-      queryURL += "&begin_date=" + start + "0101";
-    }
-    if(end) {
-      queryURL += "&end_date=" + end + "0101";
-    }
-    return axios.get(queryURL);
+  signup: function(data) {
+    return axios.post("/api/users/signup", data)
+        .then(res => res.data.token);
   },
-  // Saves an article to the database
-  saveArticle: function(data) {
-    return axios.post("/api/articles", data);
+  login: function(data) {
+    return axios.post("/api/users/login", data)
+        .then(res => res.data.token);
   },
-  // Gets all articles
-  getArticles: function() {
-    return axios.get("/api/articles");
+  //get account associated members
+  getMembers: function() {
+    return axios.get("/api/members");
   },
-  // Deletes the book with the given id
-  deleteArticle: function(id) {
-    return axios.delete("/api/articles/" + id);
+  //get a member and recent activities
+  getMember: function(id) {
+    return axios.get("/api/members/" + id);
+  },
+  saveMember: function(data) {
+    return axios.post("/api/members", data);
+  },
+  deleteMember: function(id) {
+    return axios.delete("/api/members/" + id);
+  },
+  getIncomeSum: function(month, year) {
+    return axios.get("/api/planner/income/" + month + "/" + year);
+  },
+  getIncomes: function() {
+    return axios.get("/api/planner/incomes");
+  },
+  createIncome: function(data) {
+    return axios.post("/api/planner/incomes", data);
+  },
+  updateIncome: function(data) {
+    return axios.put("/api/planner/incomes", data);
+  },
+  deleteIncome: function(id) {
+    return axios.delete("/api/planner/incomes/" +id);
+  },
+  getSpendingSum: function(month, year) {
+    return axios.get("/api/planner/spending/" + month + "/" + year);
+  },
+  getSpendings: function(category) {
+    // return axios.get("/api/planner/spendings", { params: { cat: category}});
+    return axios.get("/api/planner/spendings/" + category);
+  },
+  createSpending: function(data) {
+    return axios.post("/api/planner/spendings", data);
+  },
+  updateSpending: function(data) {
+    return axios.put("/api/planner/spendings", data);
+  },
+  deleteSpending: function(id) {
+    return axios.delete("/api/planner/spendings/" +id);
+  },
+  getMonthlyBudget: function() {
+    return axios.get("/api/planner/monthlybudget");
+  },
+  getYearlyBudget: function() {
+    return axios.get("/api/planner/yearlybudget");
+  },
+  getBudgets: function(category) {
+    return axios.get("/api/planner/budgets/" + category);
+  },
+  createBudget: function(data) {
+    return axios.post("/api/planner/budgets", data);
+  },
+  updateBudget: function(data) {
+    return axios.put("/api/planner/budgets", data);
+  },
+  deleteBudget: function(id) {
+    return axios.delete("/api/planner/budgets/" +id);
   }
 };

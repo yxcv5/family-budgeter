@@ -1,14 +1,13 @@
 import React from "react";
-import { Col, Row, Container } from "../Grid";
+import { Col, Row} from "../Grid";
+import './Footer.css';
 
 const Footer = () =>
-  <Container>
-	  <Row>
-		<Col size="sm-12">
-		  <hr />
-		  <h5 className="text-center">NYT Scrubber 2017</h5>
-		</Col>
-	  </Row>
-  </Container>;
+  <div id="footer">
+	<Col size="xs-10">
+	  <hr />
+	  <h5 className="text-center">&copy; 2018 Family Money Manager</h5>
+	</Col>
+  </div>;
 
 export default Footer;

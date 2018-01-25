@@ -1,21 +1,14 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home";
-import Saved from "./pages/Saved";
+import { BrowserRouter as Router } from "react-router-dom";
 import Nav from "./components/Nav";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
+import PrimaryLayout from "./layouts/PrimaryLayout";
 
 const App = () =>
   <Router>
     <div>
       <Nav />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/search" component={Home} />
-        <Route exact path="/saved" component={Saved} />
-        <Route component={Home} />
-      </Switch>
-      <Footer />
+      <PrimaryLayout />
     </div>
   </Router>;
 

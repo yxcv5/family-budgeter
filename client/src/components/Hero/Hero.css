@@ -1,0 +1,44 @@
+.hero {
+  height: 500px;
+ /* max-width: 95%;*/
+/* width: 95%;*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  opacity: .4;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+}
+
+.hero * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1, .hero h2 {
+  color: white;
+  letter-spacing: 0.05em;
+}
+
+.hero h1 {
+  font-size: 50px;
+  padding-top: 150px;
+  padding-bottom: 20px;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  
+
+}

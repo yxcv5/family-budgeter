@@ -1,1 +1,0 @@
-{"version":3,"sources":["components/Header/Header.css"],"names":[],"mappings":"AAAA,MACC,yBACA,UAAa","file":"static/css/main.696f4c4e.css","sourcesContent":[".head {\r\n\tbackground-color: #20315A; \r\n\tcolor: white;\r\n}\n\n\n// WEBPACK FOOTER //\n// ./src/components/Header/Header.css"],"sourceRoot":""}

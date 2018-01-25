@@ -1,38 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container } from "../Grid";
+import "./Nav.css";
 
 const Nav = () =>
-  <nav className="navbar navbar-default">
-    <Container fluid>
-      <div className="navbar-header">
-        <button type="button" className="collapsed navbar-toggle">
-          <span className="sr-only">Toggle navigation</span>
-          <span className="icon-bar" /> <span className="icon-bar" />
-          <span className="icon-bar" />
-        </button>
-        <Link className="navbar-brand" to="/">
-          NYT Article Scrubber
-        </Link>
-      </div>
+  <div className="navbar navbar-inverse navbar-fixed-top">
+    <div className="navbar-header">
+      <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span className="icon-bar"></span>
+        <span className="icon-bar"></span>
+        <span className="icon-bar"></span>
+      </button>
+      <Link className="navbar-brand" to="/" >
+        Family Budget Manager
+      </Link>
+    </div>
+    <div className="main-nav collapse navbar-collapse">
       <ul className="nav navbar-nav">
         <li
           className={
             window.location.pathname === "/" ||
-            window.location.pathname === "/search"
+            window.location.pathname === "/home"
               ? "active"
               : ""
           }
         >
-          <Link to="/search">Search</Link>
+          <Link to="/home">Home</Link>
         </li>
         <li
-          className={window.location.pathname === "/saved" ? "active" : ""}
+          className={window.location.pathname === "/app/member" ? "active" : ""}
         >
-          <Link to="/saved">Saved</Link>
+          <Link to="/app/member">About</Link>
         </li>
       </ul>
-    </Container>
-  </nav>;
+    </div>
+  </div>;
 
 export default Nav;
+

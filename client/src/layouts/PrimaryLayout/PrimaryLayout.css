@@ -1,0 +1,34 @@
+.row-offcanvas {
+  height:100%;
+  padding: 0;
+  margin: 0;
+}
+
+#mainpane {
+  height:100%;
+  /*overflow:auto;*/
+  float: right;
+  width:calc(100% - 220px);
+  padding-top: 52px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+    width:calc(100% + 220px);
+  }
+    
+  .row-offcanvas-left
+  {
+    left: -220px;
+  }
+
+  .row-offcanvas-left.active {
+    left: 0;
+  }
+
+}

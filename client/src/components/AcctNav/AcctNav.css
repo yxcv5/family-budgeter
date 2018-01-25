@@ -1,0 +1,30 @@
+.acct-nav {
+  display: flex;
+  padding-top: 20px;
+}
+
+.acct-nav h3 { 
+  margin: 0 auto;
+}
+
+.acct-nav nav {
+  flex: 1;
+  margin-left: 2em;
+  border-bottom: 2px solid #555;
+}
+
+.acct-nav nav a {
+  display: inline-block;
+  padding: 0.3em 1.5em;
+  color: #555;
+  font-size: 16px;
+}
+
+.acct-nav nav a:hover {
+  background-color: #eee;
+}
+
+.acct-nav nav a.active {
+  background-color: #555;
+  color: #fff;
+}
